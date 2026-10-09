@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joe's Complete Tree Service (website concept)</title>
+<meta name="description" content="Website concept for Joe's Complete Tree Service in Deer Park, NY. Tree removal, trimming, stump grinding and storm cleanup since 1985. Rated 4.8 from 185 Google reviews.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --forest:#0f2419;--forest-2:#173426;--forest-3:#21452f;--orange:#ff6b1a;--orange-2:#ff8a45;--birch:#f4f1ea;--birch-2:#e6e0d3;--ink:#0c1a12;--mute:#b9c7bd;--soft:#4a554e;--line:#2c4a38;
+ --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:72px;--s8:112px;
+ --wrap:1240px;
+ --head:"Domine",Georgia,"Times New Roman",serif;--body:"Instrument Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--forest);color:var(--birch);font-family:var(--body);font-size:17.5px;line-height:1.6;overflow-x:hidden}
+svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s5)}
+.skip{position:absolute;left:-999px;top:0;background:var(--orange);color:var(--ink);padding:var(--s2) var(--s3);z-index:99;font-weight:700}
+.skip:focus{left:var(--s3);top:var(--s3)}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:.98;margin:0;letter-spacing:-.025em}
+p{margin:0 0 var(--s3)}
+.eyebrow{font-weight:700;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin:0 0 var(--s3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:56px;padding:0 var(--s5);font:700 1.02rem var(--body);text-decoration:none;cursor:pointer;border:2px solid transparent;border-radius:0;transition:background .2s,color .2s}
+.btn-orange{background:var(--orange);color:var(--ink)}.btn-orange:hover{background:var(--orange-2)}
+.btn-ghost{border-color:var(--birch);color:var(--birch);background:transparent}.btn-ghost:hover{background:var(--birch);color:var(--ink)}
+.btn-dark{background:var(--ink);color:var(--birch)}.btn-dark:hover{background:var(--forest-3)}
+
+.concept{background:var(--birch);color:var(--ink);text-align:center;font-size:.85rem;padding:var(--s2) var(--s3)}
+.concept a{font-weight:700}
+
+header.site{position:sticky;top:0;z-index:40;background:var(--forest);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:78px}
+.logo{display:flex;align-items:center;gap:var(--s3);text-decoration:none}
+.logo .mark{width:46px;height:46px;background:var(--orange);display:grid;place-items:center;flex:none}
+.logo b{font-family:var(--head);font-size:1.45rem;line-height:1;display:block}
+.logo small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-top:2px}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex}
+nav.main a{display:flex;align-items:center;min-height:44px;padding:0 var(--s3);text-decoration:none;font-weight:600;color:var(--mute)}
+nav.main a:hover{color:var(--birch)}
+.hd-call{display:flex;align-items:center;gap:var(--s3)}
+.hd-call .btn{min-height:48px;padding:0 var(--s4)}
+.menu-btn{display:none;min-height:48px;min-width:48px;border:2px solid var(--birch);background:none;color:var(--birch);font:700 .95rem var(--body);padding:0 var(--s3);cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:var(--s7) 0 0}
+.hero .bgnum{position:absolute;right:-2vw;top:var(--s5);font-family:var(--head);font-weight:700;font-size:clamp(9rem,26vw,24rem);line-height:.8;color:transparent;-webkit-text-stroke:2px var(--forest-3);pointer-events:none;letter-spacing:-.04em}
+.hero-copy{position:relative;z-index:2}
+.hero h1{font-size:clamp(3rem,8.4vw,8rem);text-transform:uppercase}
+.hero h1 span{display:block}
+.hero h1 .o{color:var(--orange)}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:var(--s6);align-items:end;margin-top:var(--s5)}
+.hero .lede{font-size:1.25rem;color:var(--mute);max-width:42ch;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.storm{margin-top:var(--s6);position:relative}
+.storm .rain line{animation:rain 1.1s linear infinite}
+@keyframes rain{from{transform:translate(0,-40px)}to{transform:translate(-20px,40px)}}
+.storm .bend{transform-origin:600px 300px;animation:bend 4s ease-in-out infinite}
+@keyframes bend{0%,100%{transform:skewX(-4deg)}50%{transform:skewX(-9deg)}}
+
+.hazard{height:14px;background:repeating-linear-gradient(-45deg,var(--orange) 0 18px,var(--ink) 18px 36px)}
+.proof{background:var(--orange);color:var(--ink)}
+.proof ul{list-style:none;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding-top:var(--s5);padding-bottom:var(--s5)}
+.proof li{padding:0 var(--s4);border-left:2px solid rgba(12,26,18,.25)}
+.proof li:first-child{border-left:0;padding-left:0}
+.proof b{display:block;font-family:var(--head);font-size:clamp(2rem,3.6vw,3.2rem);line-height:1}
+.proof span{font-weight:600}
+
+section{padding:var(--s8) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
+.sec-head h2{font-size:clamp(2.6rem,6vw,5.4rem);text-transform:uppercase}
+.sec-head p{color:var(--mute);font-size:1.12rem;margin:0}
+
+/* services rows */
+.rows{list-style:none;margin:0;padding:0;border-top:2px solid var(--birch)}
+.rows li{display:grid;grid-template-columns:110px 1.3fr 1fr 120px;gap:var(--s5);align-items:center;padding:var(--s5) 0;border-bottom:1px solid var(--line);transition:background .25s}
+.rows li:hover{background:var(--forest-2)}
+.rows .num{font-family:var(--head);font-size:1.2rem;color:var(--orange);font-weight:700}
+.rows h3{font-size:clamp(2rem,4.2vw,3.6rem);text-transform:uppercase}
+.rows p{margin:0;color:var(--mute)}
+.rows svg{width:96px;height:96px;justify-self:end}
+
+/* storm path */
+.after{background:var(--birch);color:var(--ink)}
+.after .sec-head p{color:var(--soft)}
+.after .eyebrow{color:#b8460a}
+.path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);counter-reset:s;position:relative}
+.path::before{content:"";position:absolute;left:0;right:0;top:27px;height:4px;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 24px)}
+.path li{position:relative;padding-right:var(--s5)}
+.path li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:58px;height:58px;background:var(--orange);color:var(--ink);font:700 1.5rem var(--head);margin-bottom:var(--s4);position:relative}
+.path h3{font-size:1.6rem;margin-bottom:var(--s2)}
+.path p{color:var(--soft);margin:0}
+.warn-line{margin-top:var(--s6);padding:var(--s4);border-left:6px solid var(--orange);background:#fff;font-weight:600;max-width:760px}
+
+/* add-on */
+.addon{background:var(--forest-2)}
+.addon-tag{display:inline-flex;align-items:center;gap:var(--s2);font-weight:700;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--orange);padding:var(--s2) var(--s3);margin-bottom:var(--s4)}
+.addon-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:var(--s6);align-items:start}
+.addon h2{font-size:clamp(2.4rem,5vw,4.4rem);text-transform:uppercase;margin-bottom:var(--s4)}
+.price{font-family:var(--head);font-size:3.4rem;color:var(--orange);line-height:1;margin-bottom:var(--s2)}
+.addon ul.inc{list-style:none;padding:0;margin:var(--s4) 0}
+.addon ul.inc li{padding:var(--s3) 0 var(--s3) var(--s5);border-bottom:1px solid var(--line);position:relative}
+.addon ul.inc li::before{content:"";position:absolute;left:0;top:26px;width:16px;height:4px;background:var(--orange)}
+.sample-note{border:2px dashed var(--mute);padding:var(--s3) var(--s4);color:var(--mute);font-size:.95rem}
+.sample-note b{color:var(--birch)}
+.drone{position:relative;background:#000;border:2px solid var(--line)}
+.drone svg{width:100%;height:auto}
+.hud text{font-family:"Courier New",monospace;font-weight:700}
+.rec{animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.drone-ctrl{display:flex;flex-wrap:wrap;gap:var(--s2);padding:var(--s3);background:var(--ink);align-items:center}
+.drone-ctrl button{min-height:44px;min-width:44px;padding:0 var(--s3);background:transparent;color:var(--birch);border:1.5px solid var(--line);font:600 .9rem var(--body);cursor:pointer}
+.drone-ctrl button[aria-current="step"]{background:var(--birch);color:var(--ink);border-color:var(--birch)}
+.drone-ctrl .play{background:var(--orange);color:var(--ink);border-color:var(--orange);font-weight:700;min-width:96px}
+.drone-ctrl .sp{flex:1}
+.stage{transition:opacity .6s}
+
+/* stump tool */
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:start}
+.card{background:var(--birch);color:var(--ink);padding:var(--s5)}
+.card h3{font-size:1.6rem;margin-bottom:var(--s3)}
+.badge{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:2px var(--s2);margin-bottom:var(--s4)}
+.seg{display:flex;border:2px solid var(--ink);margin-bottom:var(--s4)}
+.seg button{flex:1;min-height:48px;border:0;background:transparent;font:600 .95rem var(--body);cursor:pointer;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--birch)}
+.field{margin-bottom:var(--s4)}
+.field label,.field legend{display:block;font-weight:700;margin-bottom:var(--s2)}
+.size-row{display:grid;grid-template-columns:1fr 110px;gap:var(--s3);align-items:center}
+input[type=range]{width:100%;accent-color:#c9500d;min-height:44px}
+.num-in{display:flex;align-items:center;border:2px solid var(--ink);background:#fff}
+.num-in input{width:100%;min-height:46px;border:0;font:700 1.1rem var(--body);padding:0 var(--s2);text-align:right;background:transparent;color:var(--ink)}
+.num-in span{padding:0 var(--s2);font-weight:600}
+.ticks label{display:flex;gap:var(--s3);align-items:center;min-height:44px;cursor:pointer}
+.ticks input{width:22px;height:22px;accent-color:#c9500d}
+.out{background:var(--ink);color:var(--birch);padding:var(--s5)}
+.out .big{font-family:var(--head);font-size:clamp(3rem,6vw,4.6rem);line-height:1;color:var(--orange)}
+.out .cls{font-family:var(--head);font-size:1.8rem;margin:var(--s2) 0 var(--s4)}
+.out ul{padding-left:var(--s4);color:var(--mute);margin:var(--s3) 0}
+.fine{font-size:.88rem;color:var(--mute)}
+
+/* rating */
+.rating{background:var(--orange);color:var(--ink);padding:var(--s8) 0}
+.rating-grid{display:grid;grid-template-columns:auto 1fr;gap:var(--s7);align-items:center}
+.rating .score{font-family:var(--head);font-size:clamp(7rem,16vw,14rem);line-height:.8;letter-spacing:-.05em}
+.rating h2{font-size:clamp(2rem,4vw,3.4rem);text-transform:uppercase;margin-bottom:var(--s3)}
+.rating .stars{display:flex;gap:var(--s1);margin-bottom:var(--s4)}
+.rating .stars svg{width:36px;height:36px}
+
+/* visit + form */
+.visit-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:var(--s7);align-items:start}
+.info dl{margin:0;display:grid;grid-template-columns:120px 1fr;gap:var(--s3) var(--s4);border-top:2px solid var(--birch);padding-top:var(--s4)}
+.info dt{font-weight:700;color:var(--orange);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;padding-top:4px}
+.info dd{margin:0;font-size:1.1rem}
+.info .tel-big{font-family:var(--head);font-size:clamp(2rem,4vw,3rem);text-decoration:none;color:var(--birch);display:inline-block;margin:var(--s4) 0}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.f input,.f select,.f textarea{width:100%;min-height:52px;padding:var(--s2) var(--s3);border:2px solid #b8b1a2;background:#fff;font:inherit;color:var(--ink);border-radius:0}
+.f textarea{min-height:120px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ink);outline:3px solid var(--orange);outline-offset:0}
+[aria-invalid="true"]{border-color:#b3261e!important;background:#fff4f2!important}
+.err{color:#b3261e;font-weight:700;min-height:1.5em;margin:0 0 var(--s2)}
+.demo-note{font-size:.88rem;color:var(--soft);margin:var(--s3) 0 0}
+.done h3{font-size:2.2rem;margin-bottom:var(--s3)}
+
+footer{background:var(--ink);padding:var(--s7) 0 var(--s7);color:var(--mute)}
+.f-big{font-family:var(--head);font-size:clamp(2.6rem,7vw,6rem);text-transform:uppercase;color:var(--birch);line-height:.95;margin-bottom:var(--s5)}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);padding:var(--s5) 0;border-top:1px solid var(--line)}
+.f-grid b{display:block;color:var(--birch)}
+footer a{color:var(--birch)}
+.disc{font-size:.88rem;max-width:92ch;border-top:1px solid var(--line);padding-top:var(--s4);margin:0}
+.sticky-call{display:none}
+
+@media (max-width:1060px){
+ .rows li{grid-template-columns:70px 1fr 96px}.rows li p{grid-column:2/3}.rows svg{grid-row:1/3;grid-column:3}
+ .addon-grid,.tool-grid,.visit-grid{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+ nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--forest);border-bottom:2px solid var(--orange)}
+ nav.main.open{display:block}
+ nav.main ul{flex-direction:column;padding:var(--s2) var(--s4) var(--s4)}
+ .menu-btn{display:inline-flex;align-items:center}
+ .hero-row,.sec-head{grid-template-columns:1fr}
+ .sec-head{gap:var(--s3)}
+ .proof ul{grid-template-columns:1fr 1fr;gap:var(--s4) 0}
+ .proof li:nth-child(3){border-left:0;padding-left:0}
+ .path{grid-template-columns:1fr 1fr;gap:var(--s5) 0}.path::before{display:none}
+ .rating-grid{grid-template-columns:1fr;gap:var(--s4)}
+}
+@media (max-width:640px){
+ .wrap{padding:0 var(--s3)}
+ section,.rating{padding:var(--s7) 0}
+ .hd-call .btn{display:none}
+ .storm svg{height:190px;width:100%}
+ .logo b{font-size:1.2rem}
+ .rows li{grid-template-columns:1fr 72px;gap:var(--s2) var(--s3)}
+ .rows .num{grid-column:1/-1}.rows li p{grid-column:1/-1}.rows svg{grid-row:2;grid-column:2;width:72px;height:72px}
+ .path{grid-template-columns:1fr}
+ form .row,.f-grid{grid-template-columns:1fr}
+ .info dl{grid-template-columns:1fr;gap:var(--s1)}.info dd{margin-bottom:var(--s3)}
+ .card,.out{padding:var(--s4)}
+ .drone-ctrl .sp{display:none}
+ .sticky-call{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:50;min-height:58px;align-items:center;justify-content:center;background:var(--orange);color:var(--ink);font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+ footer{padding-bottom:120px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. A sample, not the official Joe's Complete Tree Service site.</div>
+
+<header class="site">
+ <div class="wrap hd">
+  <a class="logo" href="#top" aria-label="Joe's Complete Tree Service, home">
+   <span class="mark"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M16 3 L27 22 H19 V29 H13 V22 H5Z" fill="#0c1a12"/></svg></span>
+   <span><b>Joe's Complete</b><small>Tree Service · Deer Park</small></span>
+  </a>
+  <nav class="main" id="nav" aria-label="Main">
+   <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#storm">After a storm</a></li>
+    <li><a href="#stump">Stump sizer</a></li>
+    <li><a href="#drone">Drone view</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav>
+  <div class="hd-call">
+   <a class="btn btn-orange" href="tel:+16312252075">(631) 225-2075</a>
+   <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+ <div class="bgnum" aria-hidden="true">1985</div>
+ <div class="wrap hero-copy">
+  <p class="eyebrow">Deer Park, NY · Since 1985</p>
+  <h1><span>Big trees.</span> <span class="o">Bad storms.</span> <span>Call Joe's.</span></h1>
+  <div class="hero-row">
+   <p class="lede">Removal, trimming, stump grinding and storm cleanup from a Deer Park tree crew that has been at it since 1985.</p>
+   <div class="actions">
+    <a class="btn btn-orange" href="tel:+16312252075">Call (631) 225-2075</a>
+    <a class="btn btn-ghost" href="#contact">Get an estimate</a>
+   </div>
+  </div>
+ </div>
+ <div class="storm">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration: a row of trees in a storm, one bending in the wind, with a work truck parked at the curb">
+   <defs><clipPath id="sk"><rect width="1440" height="320"/></clipPath></defs>
+   <g clip-path="url(#sk)">
+    <g class="rain" stroke="#3d6a52" stroke-width="2" opacity=".7">
+     <line x1="80" y1="20" x2="60" y2="70"/><line x1="220" y1="60" x2="200" y2="110"/><line x1="360" y1="10" x2="340" y2="60"/><line x1="500" y1="70" x2="480" y2="120"/><line x1="700" y1="30" x2="680" y2="80"/><line x1="860" y1="80" x2="840" y2="130"/><line x1="1000" y1="20" x2="980" y2="70"/><line x1="1150" y1="60" x2="1130" y2="110"/><line x1="1300" y1="15" x2="1280" y2="65"/><line x1="1400" y1="90" x2="1380" y2="140"/>
+    </g>
+    <g fill="#173426">
+     <path d="M0 320 V210 Q60 140 120 200 Q170 120 240 190 Q300 150 340 220 V320Z"/>
+     <path d="M900 320 V200 Q960 120 1030 190 Q1090 110 1160 180 Q1230 130 1290 200 Q1360 150 1440 210 V320Z"/>
+    </g>
+    <g class="bend">
+     <path d="M590 320 L600 190 L616 190 L626 320Z" fill="#2c1d12"/>
+     <g fill="#21452f"><circle cx="560" cy="160" r="70"/><circle cx="640" cy="120" r="80"/><circle cx="700" cy="170" r="60"/><circle cx="600" cy="90" r="56"/></g>
+     <g fill="#2f5a3e"><circle cx="630" cy="110" r="44"/><circle cx="560" cy="150" r="34"/></g>
+    </g>
+    <!-- truck -->
+    <g transform="translate(770 236)">
+     <rect x="0" y="0" width="190" height="56" fill="#f4f1ea"/>
+     <rect x="190" y="14" width="74" height="42" fill="#ff6b1a"/>
+     <rect x="208" y="20" width="36" height="18" fill="#0f2419"/>
+     <rect x="0" y="24" width="190" height="8" fill="#ff6b1a"/>
+     <circle cx="44" cy="60" r="16" fill="#0c1a12"/><circle cx="220" cy="60" r="16" fill="#0c1a12"/>
+     <circle cx="44" cy="60" r="6" fill="#b9c7bd"/><circle cx="220" cy="60" r="6" fill="#b9c7bd"/>
+    </g>
+    <rect y="300" width="1440" height="20" fill="#0c1a12"/>
+    <g stroke="#ff6b1a" stroke-width="4"><path d="M0 310 H60M100 310 H160M200 310 H260M300 310 H360M400 310 H460M500 310 H560M600 310 H660M700 310 H760M800 310 H860M900 310 H960M1000 310 H1060M1100 310 H1160M1200 310 H1260M1300 310 H1360M1400 310 H1440"/></g>
+   </g>
+  </svg>
+ </div>
+</section>
+<div class="hazard" aria-hidden="true"></div>
+<div class="proof">
+ <ul class="wrap" aria-label="At a glance">
+  <li><b>4.8</b><span>Google rating</span></li>
+  <li><b>185</b><span>Google reviews</span></li>
+  <li><b>1985</b><span>Working since</span></li>
+  <li><b>7:30</b><span>PM closing time</span></li>
+ </ul>
+</div>
+
+<section id="services">
+ <div class="wrap">
+  <div class="sec-head">
+   <h2>The complete job.</h2>
+   <p>It is in the name. Joe's takes the tree down, deals with what is left in the ground, and hauls the mess away.</p>
+  </div>
+  <ol class="rows">
+   <li><span class="num">01</span><h3>Tree removal</h3><p>Dead, damaged or unwanted trees taken down in controlled sections, close to houses, wires and fences.</p>
+    <svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#173426"/><path d="M40 86 V40 H56 V86Z" fill="#f4f1ea"/><path d="M30 40 H66" stroke="#ff6b1a" stroke-width="4" stroke-dasharray="6 4"/><path d="M40 30 L48 14 L56 30Z" fill="#b9c7bd"/></svg></li>
+   <li><span class="num">02</span><h3>Trimming</h3><p>Limbs off the roof and away from the lines. Thinned crowns that let light in and wind through.</p>
+    <svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#173426"/><path d="M44 86 V50 H52 V86Z" fill="#f4f1ea"/><circle cx="48" cy="38" r="22" fill="#2f5a3e"/><path d="M66 30 L84 22" stroke="#ff6b1a" stroke-width="5" stroke-linecap="square"/><path d="M62 24 L70 36" stroke="#f4f1ea" stroke-width="2"/></svg></li>
+   <li><span class="num">03</span><h3>Stump grinding</h3><p>Stumps ground down below the surface so you can mow, plant or lay sod over the spot.</p>
+    <svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#173426"/><ellipse cx="48" cy="62" rx="26" ry="10" fill="#f4f1ea"/><ellipse cx="48" cy="62" rx="16" ry="6" fill="none" stroke="#b9c7bd" stroke-width="2"/><g fill="#ff6b1a"><rect x="18" y="40" width="5" height="5"/><rect x="72" y="36" width="5" height="5"/><rect x="30" y="30" width="4" height="4"/><rect x="62" y="28" width="4" height="4"/></g></svg></li>
+   <li><span class="num">04</span><h3>Storm cleanup</h3><p>Fallen trees and broken limbs cleared off driveways, roofs and yards after the wind dies down.</p>
+    <svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#173426"/><path d="M10 76 L80 50" stroke="#f4f1ea" stroke-width="10"/><circle cx="80" cy="44" r="14" fill="#2f5a3e"/><path d="M20 20 L36 20 L28 34 L40 34 L22 56 L28 38 L18 38Z" fill="#ff6b1a"/></svg></li>
+  </ol>
+ </div>
+</section>
+
+<section class="after" id="storm">
+ <div class="wrap">
+  <div class="sec-head">
+   <div><p class="eyebrow">After a storm</p><h2>Tree down? Here is the order of things.</h2></div>
+   <p>Most storm calls start the same way. Knowing the steps makes a bad morning a little easier.</p>
+  </div>
+  <ol class="path">
+   <li><h3>Stay clear</h3><p>Keep people, pets and cars away from the tree, and from any wire it touched.</p></li>
+   <li><h3>Call the utility</h3><p>If a line is down or tangled, the power company comes first. Never move it yourself.</p></li>
+   <li><h3>Call Joe's</h3><p>Describe what fell and where. Photos from a safe distance help.</p></li>
+   <li><h3>Cleared and hauled</h3><p>The tree is cut down to size and taken away, stump included if you want it gone.</p></li>
+  </ol>
+  <p class="warn-line">If a tree is on a power line, treat the line as live. Call your utility or 911 before anyone else.</p>
+ </div>
+</section>
+
+<section class="addon" id="drone">
+ <div class="wrap">
+  <span class="addon-tag">Featured add-on in this concept</span>
+  <div class="addon-grid">
+   <div>
+    <figure class="drone" style="margin:0" aria-label="Simulated drone view">
+     <svg viewBox="0 0 800 500" role="img" aria-labelledby="dr-t">
+      <title id="dr-t">Simulated top-down drone view of a yard where a large oak is removed in stages</title>
+      <defs>
+       <pattern id="grass" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#4f7d3a"/><path d="M0 9h18" stroke="#57873f" stroke-width="5"/></pattern>
+       <pattern id="shing" width="20" height="10" patternUnits="userSpaceOnUse"><rect width="20" height="10" fill="#6a6f73"/><path d="M0 9.5h20M10 0v5" stroke="#55595d" stroke-width="1"/></pattern>
+       <clipPath id="frame"><rect width="800" height="500"/></clipPath>
+      </defs>
+      <g clip-path="url(#frame)">
+      <g id="world">
+       <rect x="-60" y="-60" width="920" height="620" fill="url(#grass)"/>
+       <!-- street -->
+       <rect x="-60" y="440" width="920" height="120" fill="#2f3337"/>
+       <path d="M-60 500 H860" stroke="#e8d36a" stroke-width="3" stroke-dasharray="30 22"/>
+       <rect x="-60" y="420" width="920" height="20" fill="#b9b4a8"/>
+       <!-- driveway -->
+       <rect x="80" y="230" width="110" height="190" fill="#8c8a84"/>
+       <!-- house -->
+       <rect x="40" y="40" width="300" height="190" fill="url(#shing)"/>
+       <path d="M40 135 H340" stroke="#4a4e52" stroke-width="4"/>
+       <rect x="230" y="70" width="26" height="26" fill="#55595d"/>
+       <!-- fence -->
+       <path d="M370 20 V420 M370 20 H780 V420" stroke="#d8cdb6" stroke-width="5" fill="none"/>
+       <!-- patio -->
+       <rect x="400" y="50" width="120" height="90" fill="#b7a58a"/>
+       <!-- stages -->
+       <g class="stage" data-s="0">
+        <circle cx="575" cy="270" r="150" fill="#1d3a26" opacity=".35"/>
+        <g fill="#2c5a34"><circle cx="560" cy="240" r="120"/><circle cx="640" cy="300" r="95"/><circle cx="500" cy="320" r="80"/></g>
+        <g fill="#3b7444"><circle cx="575" cy="240" r="82"/><circle cx="640" cy="300" r="56"/><circle cx="510" cy="310" r="48"/></g>
+        <g fill="#5a9356" opacity=".8"><circle cx="590" cy="220" r="34"/><circle cx="530" cy="290" r="22"/><circle cx="650" cy="280" r="24"/></g>
+       </g>
+       <g class="stage" data-s="1" opacity="0">
+        <g fill="#2c5a34"><circle cx="575" cy="270" r="72"/><circle cx="610" cy="250" r="44"/></g>
+        <g stroke="#5a3b22" stroke-width="10" stroke-linecap="round"><path d="M575 270 L520 220"/><path d="M575 270 L640 320"/></g>
+        <g fill="#3b7444"><circle cx="460" cy="380" r="22"/><circle cx="490" cy="390" r="16"/><circle cx="700" cy="160" r="20"/></g>
+        <g stroke="#5a3b22" stroke-width="8"><path d="M440 370 L500 396"/><path d="M684 150 L720 172"/></g>
+        <!-- truck in driveway -->
+        <rect x="96" y="250" width="78" height="150" fill="#f4f1ea"/><rect x="96" y="360" width="78" height="40" fill="#ff6b1a"/>
+       </g>
+       <g class="stage" data-s="2" opacity="0">
+        <circle cx="575" cy="270" r="26" fill="#6b4a2c"/><circle cx="575" cy="270" r="18" fill="#c7a273"/><circle cx="575" cy="270" r="10" fill="none" stroke="#8f6a40" stroke-width="2"/>
+        <g fill="#c7a273" stroke="#6b4a2c" stroke-width="3"><rect x="430" y="370" width="70" height="22" rx="10"/><rect x="430" y="394" width="70" height="22" rx="10"/><rect x="505" y="382" width="70" height="22" rx="10"/></g>
+        <rect x="96" y="250" width="78" height="150" fill="#f4f1ea"/><rect x="96" y="360" width="78" height="40" fill="#ff6b1a"/>
+       </g>
+       <g class="stage" data-s="3" opacity="0">
+        <circle cx="575" cy="270" r="50" fill="#7a5a3a" opacity=".55"/>
+        <circle cx="575" cy="270" r="24" fill="#4a3220"/>
+        <g fill="#c7a273"><rect x="540" y="222" width="5" height="5"/><rect x="612" y="240" width="5" height="5"/><rect x="600" y="306" width="4" height="4"/><rect x="530" y="300" width="5" height="5"/><rect x="560" y="320" width="4" height="4"/></g>
+        <rect x="610" y="260" width="40" height="26" fill="#ff6b1a"/>
+       </g>
+       <g class="stage" data-s="4" opacity="0">
+        <circle cx="575" cy="270" r="40" fill="#6c8f3f"/>
+        <circle cx="575" cy="270" r="40" fill="none" stroke="#88ad55" stroke-width="2" stroke-dasharray="5 6"/>
+       </g>
+      </g>
+      </g>
+      <!-- HUD -->
+      <g class="hud" fill="none" stroke="#f4f1ea" stroke-width="3">
+       <path d="M24 64 V24 H64M736 24 H776 V64M776 436 V476 H736M64 476 H24 V436"/>
+       <path d="M400 236 V224M400 264 V276M386 250 H374M414 250 H426" stroke-width="2"/>
+       <circle cx="400" cy="250" r="10" stroke-width="2"/>
+      </g>
+      <g class="hud" fill="#f4f1ea" font-size="16">
+       <circle class="rec" cx="48" cy="48" r="7" fill="#ff3b1a"/>
+       <text x="62" y="54">REC</text>
+       <text x="110" y="54" id="tc">00:00:00</text>
+       <text x="760" y="54" text-anchor="end">ALT 120 FT</text>
+       <text x="760" y="76" text-anchor="end">CAM -90°</text>
+       <rect x="40" y="424" width="380" height="36" fill="#000" opacity=".6"/>
+       <text x="54" y="448" id="st-label">STAGE 1/5  BEFORE</text>
+       <text x="760" y="454" text-anchor="end" font-size="13">SIMULATED</text>
+      </g>
+     </svg>
+     <div class="drone-ctrl">
+      <button class="play" id="play" aria-pressed="false">Pause</button>
+      <span class="sp"></span>
+      <button data-go="0" aria-current="step">Before</button>
+      <button data-go="1">Limbs</button>
+      <button data-go="2">Trunk</button>
+      <button data-go="3">Stump</button>
+      <button data-go="4">Done</button>
+     </div>
+    </figure>
+   </div>
+   <div>
+    <h2>Drone aerial photos and video</h2>
+    <p class="price">$550</p>
+    <p style="color:var(--mute)">Show a removal the way neighbors never see it: straight down from above, from full canopy to fresh grass. Great for the website gallery and social posts.</p>
+    <ul class="inc">
+     <li>One job filmed from above: before, during and after</li>
+     <li>A short edited video for the website and social media</li>
+     <li>A set of still aerial photos</li>
+     <li>Added to the project gallery on the new site</li>
+    </ul>
+    <p class="sample-note"><b>Sample feature.</b> The drone view here is a simulated animation drawn for this concept. No real footage of a Joe's job is shown. The add-on price is Lisette Colon's package price, not a Joe's service price.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="stump">
+ <div class="wrap">
+  <div class="sec-head">
+   <h2>Stump sizer.</h2>
+   <p>Measure the stump before you call, and you will get a better answer on the phone. Use a tape measure across the top, or around the outside.</p>
+  </div>
+  <div class="tool-grid">
+   <div class="card">
+    <span class="badge">Sample tool · Illustrative</span>
+    <div class="seg" role="group" aria-label="How did you measure?">
+     <button type="button" aria-pressed="true" data-mode="across">Across the top</button>
+     <button type="button" aria-pressed="false" data-mode="around">Around the outside</button>
+    </div>
+    <div class="field">
+     <label for="sz" id="sz-l">Measurement across the top</label>
+     <div class="size-row">
+      <input type="range" id="sz" min="4" max="160" value="22" aria-labelledby="sz-l">
+      <div class="num-in"><input id="szn" type="number" min="4" max="160" value="22" aria-label="Inches"><span>in</span></div>
+     </div>
+    </div>
+    <div class="field">
+     <label for="cnt">How many stumps?</label>
+     <div class="num-in" style="max-width:140px"><input id="cnt" type="number" min="1" max="20" value="1"><span>stumps</span></div>
+    </div>
+    <fieldset class="field ticks" style="border:0;padding:0;margin:0">
+     <legend>Anything nearby?</legend>
+     <label><input type="checkbox" data-n="Close to a fence, patio or foundation">Close to a fence, patio or foundation</label>
+     <label><input type="checkbox" data-n="Big surface roots showing">Big surface roots showing</label>
+     <label><input type="checkbox" data-n="Backyard, reached through a gate">In the backyard, through a gate</label>
+    </fieldset>
+   </div>
+   <div class="out" aria-live="polite">
+    <svg viewBox="0 0 400 220" role="img" aria-label="Top view of your stump next to a one foot scale" id="stump-svg">
+     <rect width="400" height="220" fill="#173426"/>
+     <circle id="st-c" cx="150" cy="110" r="40" fill="#c7a273" stroke="#6b4a2c" stroke-width="6"/>
+     <circle id="st-r" cx="150" cy="110" r="22" fill="none" stroke="#8f6a40" stroke-width="2"/>
+     <g transform="translate(300 40)"><rect width="16" height="140" fill="#ff6b1a"/><g stroke="#0c1a12" stroke-width="2"><path d="M0 35h10M0 70h16M0 105h10"/></g><text x="26" y="76" fill="#f4f1ea" font-family="Instrument Sans,sans-serif" font-size="14">1 ft</text></g>
+    </svg>
+    <p class="big" id="o-d" style="margin-top:var(--s4)">22 in</p>
+    <p class="fine" style="margin:0">approximate diameter</p>
+    <p class="cls" id="o-c">Medium stump</p>
+    <p style="margin:0;font-weight:600">Notes to read out on the call:</p>
+    <ul id="o-n"></ul>
+    <p class="fine">Illustrative only. Size classes are a rough guide for the conversation, not a quote. Joe's sets the price after seeing the stump.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="rating">
+ <div class="wrap rating-grid">
+  <p class="score" aria-hidden="true">4.8</p>
+  <div>
+   <div class="stars" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.4 2.1 7.6L12 16.6 5.5 21l2.1-7.6L2 9h7z" fill="#0c1a12"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.4 2.1 7.6L12 16.6 5.5 21l2.1-7.6L2 9h7z" fill="#0c1a12"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.4 2.1 7.6L12 16.6 5.5 21l2.1-7.6L2 9h7z" fill="#0c1a12"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.4 2.1 7.6L12 16.6 5.5 21l2.1-7.6L2 9h7z" fill="#0c1a12"/></svg><svg viewBox="0 0 24 24"><defs><clipPath id="h8"><rect width="19" height="24"/></clipPath></defs><path d="M12 2l3 7h7l-5.6 4.4 2.1 7.6L12 16.6 5.5 21l2.1-7.6L2 9h7z" fill="none" stroke="#0c1a12" stroke-width="1.5"/><path clip-path="url(#h8)" d="M12 2l3 7h7l-5.6 4.4 2.1 7.6L12 16.6 5.5 21l2.1-7.6L2 9h7z" fill="#0c1a12"/></svg>
+   </div>
+   <h2>4.8 stars from 185 Google reviews.</h2>
+   <p style="font-size:1.12rem;max-width:52ch">That is a lot of Long Island yards. On a live site, this is where a handful of real customer quotes would go, picked with Joe.</p>
+   <a class="btn btn-dark" href="https://www.google.com/search?q=Joe%27s+Complete+Tree+Service+Deer+Park+NY">Read the reviews on Google</a>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap visit-grid">
+  <div class="info">
+   <p class="eyebrow">Contact</p>
+   <h2 style="font-size:clamp(2.4rem,5vw,4.2rem);text-transform:uppercase;margin-bottom:var(--s4)">Tell Joe's what fell.</h2>
+   <a class="tel-big" href="tel:+16312252075">(631) 225-2075</a>
+   <dl>
+    <dt>Address</dt><dd>15 Deer Park Blvd<br>Deer Park, NY 11729</dd>
+    <dt>Hours</dt><dd>Closes 7:30 PM<br><span class="fine">Full weekly hours to confirm with the owner.</span></dd>
+    <dt>Since</dt><dd>1985</dd>
+   </dl>
+  </div>
+  <div class="card">
+   <form novalidate>
+    <h3>Estimate request</h3>
+    <div class="row">
+     <div class="field f"><label for="c-name">Name *</label><input id="c-name" autocomplete="name" required></div>
+     <div class="field f"><label for="c-phone">Phone *</label><input id="c-phone" type="tel" autocomplete="tel" required></div>
+    </div>
+    <div class="field f"><label for="c-addr">Address of the job *</label><input id="c-addr" autocomplete="street-address" required></div>
+    <div class="field f"><label for="c-type">Type of work</label>
+     <select id="c-type"><option>Tree removal</option><option>Trimming</option><option>Stump grinding</option><option>Storm cleanup</option><option>Not sure yet</option></select></div>
+    <div class="field f"><label for="c-msg">What is going on?</label><textarea id="c-msg" placeholder="Large oak split in last night's wind. One half is on the back fence."></textarea></div>
+    <p class="err" role="alert"></p>
+    <button class="btn btn-orange" type="submit" style="width:100%">Send request</button>
+    <p class="demo-note">Demo form. This is a website concept. Nothing is sent or saved.</p>
+   </form>
+   <div class="done" hidden tabindex="-1">
+    <h3>Demo complete.</h3>
+    <p>This is a website concept, so nothing was sent or saved. On a live site, the request would go straight to Joe's.</p>
+    <button class="btn btn-dark" type="button">Start over</button>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p class="f-big">Joe's Complete<br>Tree Service</p>
+  <div class="f-grid">
+   <div><b>Address</b>15 Deer Park Blvd, Deer Park, NY 11729</div>
+   <div><b>Phone</b><a href="tel:+16312252075">(631) 225-2075</a></div>
+   <div><b>Hours</b>Closes 7:30 PM</div>
+  </div>
+  <p class="disc">Independent website concept designed by Lisette Colon. Not affiliated with or approved by Joe's Complete Tree Service. Address, hours, rating and review quotes are from the business's public Google listing, checked October 2026. "Since 1985" is taken from the business's current website. Service descriptions, the storm steps, illustrations, the stump sizer and the drone view are illustrative samples; service list to confirm with the owner. The drone add-on is a sample feature offered by Lisette Colon.</p>
+ </div>
+</footer>
+<a class="sticky-call" href="tel:+16312252075">Call (631) 225-2075</a>
+
+<script>
+const mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+mb.addEventListener('click',()=>{const o=mb.getAttribute('aria-expanded')==='true';mb.setAttribute('aria-expanded',!o);nav.classList.toggle('open',!o)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mb.setAttribute('aria-expanded','false');nav.classList.remove('open')}));
+
+/* drone */
+(()=>{
+ const stages=[...document.querySelectorAll('.stage')],labels=['BEFORE','LIMBS DOWN','TRUNK IN SECTIONS','STUMP GRINDING','CLEANED UP'];
+ const btns=[...document.querySelectorAll('[data-go]')],play=document.getElementById('play'),lab=document.getElementById('st-label'),tc=document.getElementById('tc'),world=document.getElementById('world');
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let cur=0,paused=reduce,t0=performance.now(),acc=0,last=performance.now(),secs=0;const DUR=3400;
+ function show(i){cur=i;stages.forEach((g,k)=>g.setAttribute('opacity',k===i?1:0));btns.forEach((b,k)=>{if(k===i)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});lab.textContent='STAGE '+(i+1)+'/5  '+labels[i];acc=0}
+ function setPaused(p){paused=p;play.textContent=p?'Play':'Pause';play.setAttribute('aria-pressed',p)}
+ play.addEventListener('click',()=>setPaused(!paused));
+ btns.forEach((b,k)=>b.addEventListener('click',()=>{show(k);setPaused(true)}));
+ function loop(now){const dt=now-last;last=now;
+  if(!paused){acc+=dt;secs+=dt;if(acc>DUR){show((cur+1)%5)}
+   const s=Math.floor(secs/1000);tc.textContent='00:'+String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+   const p=secs/9000;world.setAttribute('transform','translate('+(Math.sin(p)*14).toFixed(1)+' '+(Math.cos(p*1.3)*9).toFixed(1)+')');}
+  requestAnimationFrame(loop)}
+ show(0);setPaused(reduce);requestAnimationFrame(loop);
+})();
+
+/* stump sizer */
+(()=>{
+ const r=document.getElementById('sz'),n=document.getElementById('szn'),cnt=document.getElementById('cnt'),lab=document.getElementById('sz-l');
+ const segs=[...document.querySelectorAll('[data-mode]')],ticks=[...document.querySelectorAll('.ticks input')];
+ let mode='across';
+ function calc(){
+  const v=+n.value||0,d=mode==='across'?v:v/Math.PI,dd=Math.round(d);
+  document.getElementById('o-d').textContent=dd+' in';
+  let c=dd<12?'Small stump':dd<24?'Medium stump':dd<36?'Large stump':'Extra large stump';
+  document.getElementById('o-c').textContent=c;
+  const px=Math.max(8,Math.min(100,d/12*70/2));
+  document.getElementById('st-c').setAttribute('r',px.toFixed(1));document.getElementById('st-r').setAttribute('r',(px*.55).toFixed(1));
+  const k=Math.max(1,+cnt.value||1);
+  const notes=[k+' stump'+(k>1?'s':'')+', about '+dd+' inches across'+(k>1?' (largest)':'')];
+  if(mode==='around')notes.push('Measured around: '+v+' inches');
+  ticks.forEach(t=>{if(t.checked)notes.push(t.dataset.n)});
+  document.getElementById('o-n').innerHTML=notes.map(x=>'<li>'+x+'</li>').join('');
+ }
+ r.addEventListener('input',()=>{n.value=r.value;calc()});
+ n.addEventListener('input',()=>{r.value=n.value;calc()});
+ cnt.addEventListener('input',calc);ticks.forEach(t=>t.addEventListener('change',calc));
+ segs.forEach(b=>b.addEventListener('click',()=>{
+  const old=mode;mode=b.dataset.mode;if(old===mode)return;
+  segs.forEach(s=>s.setAttribute('aria-pressed',s===b));
+  lab.textContent=mode==='across'?'Measurement across the top':'Measurement around the outside';
+  const v=+n.value;n.value=r.value=Math.round(mode==='around'?v*Math.PI:v/Math.PI);
+  calc()}));
+ calc();
+})();
+
+/* demo forms */
+document.querySelectorAll('form').forEach(f=>{
+ const done=f.parentElement.querySelector('.done'),err=f.querySelector('.err');
+ f.addEventListener('submit',e=>{e.preventDefault();let first=null;
+  f.querySelectorAll('[required]').forEach(i=>{const ok=i.value.trim()!=='';i.setAttribute('aria-invalid',!ok);if(!ok&&!first)first=i});
+  if(first){err.textContent='Please fill in the highlighted fields.';first.focus();return}
+  err.textContent='';f.hidden=true;done.hidden=false;done.focus()});
+ done.querySelector('button').addEventListener('click',()=>{f.reset();f.querySelectorAll('[aria-invalid]').forEach(i=>i.removeAttribute('aria-invalid'));f.hidden=false;done.hidden=true;f.querySelector('input').focus()});
+});
+</script>
+</body>
+</html>
